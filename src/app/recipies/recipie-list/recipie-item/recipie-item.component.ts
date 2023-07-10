@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Recipie } from '../../recipie.model';
 
 @Component({
@@ -7,5 +7,5 @@ import { Recipie } from '../../recipie.model';
     styleUrls: ['./recipie-item.component.css'],
 })
 export class RecipieItemComponent {
-    recipie: Recipie;
+    @Input() recipie: Recipie;
 }
