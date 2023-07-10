@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { Recipie } from '../recipie.model';
 
 @Component({
@@ -7,6 +7,7 @@ import { Recipie } from '../recipie.model';
     styleUrls: ['./recipie-list.component.css'],
 })
 export class RecipieListComponent {
+    @Output() RecipieWasSelected = new EventEmitter<Recipie>();
     recipies: Recipie[] = [
         new Recipie(
             'A Test Recipie',
@@ -14,4 +15,8 @@ export class RecipieListComponent {
             'https://www.maczfit.pl/blog/wp-content/uploads/2021/03/fast_food-960x639.jpeg'
         ),
     ];
+
+    onRecipieSelected(recipie: Recipie) {
+        this.RecipieWasSelected.emit(recipie);
+    }
 }
