@@ -9,22 +9,21 @@ import { RecipieDetailComponent } from './recipies/recipie-detail/recipie-detail
 import { RecipieItemComponent } from './recipies/recipie-list/recipie-item/recipie-item.component';
 import { ShoppingListComponent } from './shopping-list/shopping-list.component';
 import { ShoppingEditComponent } from './shopping-list/shopping-edit/shopping-edit.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    RecipiesComponent,
-    RecipieListComponent,
-    RecipieDetailComponent,
-    RecipieItemComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HeaderComponent,
+        RecipiesComponent,
+        RecipieListComponent,
+        RecipieDetailComponent,
+        RecipieItemComponent,
+        ShoppingListComponent,
+        ShoppingEditComponent,
+    ],
+    imports: [BrowserModule, FormsModule],
+    providers: [],
+    bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
