@@ -8,16 +8,11 @@ import { Recipie } from '../recipie.model';
     styleUrls: ['./recipie-list.component.css'],
 })
 export class RecipieListComponent {
-    @Output() RecipieWasSelected = new EventEmitter<Recipie>();
     recipies: Recipie[] = [];
 
     constructor(private recipieService: RecipieService) {}
 
     ngOnInit() {
         this.recipies = this.recipieService.getRecipies();
-    }
-
-    onRecipieSelected(recipie: Recipie) {
-        this.RecipieWasSelected.emit(recipie);
     }
 }

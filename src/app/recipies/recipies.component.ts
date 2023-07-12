@@ -10,4 +10,12 @@ import { RecipieService } from './recipie.service';
 })
 export class RecipiesComponent {
     selectedRecipie: Recipie;
+
+    constructor(private recipieService: RecipieService) {}
+
+    ngOnInit(): void {
+        this.recipieService.recipieSelected.subscribe((recipie: Recipie) => {
+            this.selectedRecipie = recipie;
+        });
+    }
 }
